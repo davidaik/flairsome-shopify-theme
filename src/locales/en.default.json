@@ -264,6 +264,9 @@
     }
   },
   "products": {
+    "general": {
+      "related_products": "Related Products"
+    },
     "product": {
       "sold_out": "Sold Out",
       "unavailable": "Unavailable",

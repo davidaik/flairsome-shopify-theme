@@ -1,0 +1,47 @@
+{% assign number_of_products = 5 %}
+{% assign number_of_products_to_fetch = number_of_products | plus: 1 %}
+{% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+  {% assign found_a_collection = false %}
+  {% for c in product.collections %}
+    {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' and c.all_products_count > 1 %}
+      {% assign found_a_collection = true %}
+      {% assign collection = c %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% if collection and collection.products_count > 1 %}
+<div class="page-width">
+  <h2>{{ 'products.general.related_products' | t }}</h2>
+  <div class="section-block">
+    {% assign rows = 1 %}
+    {% assign product_limit = 5 %}
+
+      {% comment %}
+        On mobile, show a max of 3 products to fill out the 2x2 grid.
+        Turn mobile_product_limit to false to remove that limitation.
+      {% endcomment %}
+      {% assign mobile_product_limit = true %}
+      {% comment %}
+        On mobile the 5 column grid leaves a straggler when 1 or 3 rows.
+        Hide the straggler according to its index. It's one lower than
+        the number of columns because the fist column is a collection card.
+        This is only necessary when mobile_product_limit is false.
+      {% endcomment %}
+      {% case rows %}
+        {% when 1 %}
+          {% assign product_index_hide_on_mobile = 4 %}
+        {% when 3 %}
+          {% assign product_index_hide_on_mobile = 14 %}
+      {% endcase %}
+
+      <div class="grid grid--no-gutters grid--uniform collection">
+        {% for product in collection.products limit: product_limit %}
+          <div class="grid__item small--one-half medium-up--one-fifth{% if forloop.index == 1 %} collection__card--first{% endif %} {% if mobile_product_limit and forloop.index > 3 %}small--hide{% elsif rows == 1 or rows == 3 %}{% if forloop.index == product_index_hide_on_mobile %}small--hide{% endif %}{% endif %}">
+            {% include 'product-card', product: product, collection: collection %}
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+{% endif %}

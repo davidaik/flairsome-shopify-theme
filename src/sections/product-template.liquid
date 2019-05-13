@@ -218,6 +218,16 @@
   </div>
 </div>
 
+{% if section.settings.related_products_enable %}
+  {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
+  {% include 'related-products' %}
+{% endif %}
+
+{% if section.settings.product_reviews_enable %}
+  <hr>
+  <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
+{% endif %}
+
 {% unless product == empty %}
   <script type="application/json" id="ProductJson-{{ section.id }}">
     {{ product | json }}
@@ -334,6 +344,38 @@
         "zh-TW": "啟用產品分享"
       },
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "related_products_enable",
+      "label": {
+        "de": "Ähnliche Produkte anzeigen",
+        "en": "Show related products",
+        "es": "Mostrar productos relacionados",
+        "fr": "Afficher les produits associés",
+        "it": "Mostra prodotti correlati",
+        "ja": "関連商品を表示する",
+        "nl": "Toon verwante producten",
+        "pt-BR": "Exibir produtos relacionados",
+        "zh-CN": "显示相关产品",
+        "zh-TW": "顯示相關產品"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "product_reviews_enable",
+      "label": {
+        "de": "Produktbewertungen aktivieren",
+        "en": "Enable product reviews",
+        "es": "Habilitar reseñas de productos",
+        "fr": "Activer les avis sur les produits",
+        "it": "Abilita recensioni di prodotto",
+        "ja": "商品レビューを有効にする",
+        "nl": "Productbeoordelingen inschakelen",
+        "pt-BR": "Habilitar as avaliações de produtos",
+        "zh-CN": "启用产品评论",
+        "zh-TW": "啟用產品評論"
+      }
     }
   ]
 }
