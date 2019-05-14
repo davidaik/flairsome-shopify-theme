@@ -51,7 +51,7 @@
           "zh-CN": "背景",
           "zh-TW": "背景"
         },
-        "default": "#000"
+        "default": "#fff"
       },
       {
         "type": "color",
@@ -68,7 +68,7 @@
           "zh-CN": "链接",
           "zh-TW": "連結"
         },
-        "default": "#fff"
+        "default": "#000"
       },
       {
         "type": "header",
@@ -100,7 +100,7 @@
           "zh-CN": "页面背景",
           "zh-TW": "頁面背景"
         },
-        "default": "#fff"
+        "default": "#f7f7f7"
       },
       {
         "type": "color",
@@ -134,7 +134,7 @@
           "zh-CN": "标题文本",
           "zh-TW": "標題文字"
         },
-        "default": "#1a1a1a"
+        "default": "#030303"
       },
       {
         "type": "color",
@@ -180,7 +180,7 @@
           "zh-CN": "按钮、链接和促销栏",
           "zh-TW": "按鈕、連結與宣傳活動列"
         },
-        "default": "#006eff"
+        "default": "#f23232"
       },
       {
         "type": "color",
@@ -295,7 +295,7 @@
           "zh-CN": "文本背景",
           "zh-TW": "文字背景"
         },
-        "default": "#006eff"
+        "default": "#f23232"
       }
     ]
   },
