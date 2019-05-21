@@ -728,10 +728,12 @@ window.Drawers = (function() {
 
     // Add is-transitioning class to moved elements on open so drawer can have
     // transition for close animation
-    /* Commented out by David Heisnam
-    Unnecessary and causes bugs with drawer search bar.
+
+    /* by David Heisnam.
+    Changed to prepareTransition() to fix drawer search bug during closing transition.
     this.nodes.$moved.addClass('is-transitioning');
     */
+    this.nodes.$moved.prepareTransition();
     this.$drawer.prepareTransition();
 
     this.nodes.$parent.addClass(
@@ -774,11 +776,7 @@ window.Drawers = (function() {
     $(document.activeElement).trigger('blur');
 
     // Ensure closing transition is applied to moved elements, like the nav
-    /* Commented out by David Heisnam
-    Line below was commented out to fix a bug with the drawer's search bar
-    during close transition.
     this.nodes.$moved.prepareTransition({ disableExisting: true });
-    */
     this.$drawer.prepareTransition({ disableExisting: true });
 
     this.nodes.$parent.removeClass(

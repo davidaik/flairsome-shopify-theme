@@ -4679,17 +4679,9 @@ html {
 /*================ Drawer theme styles ================*/
 .page-element {
   position: relative;
-  /*
-  Commented out by David Heisnam
-  THis block is commented out because it's unnecessary.
-  It's part of a bug with the drawer search bar during close transition.
   &.is-transitioning {
     z-index: $z-index-content;
   }
-  */
-
-  // Added by David Heisnam.
-  z-index: 2;
 }
 
 .page-container {
