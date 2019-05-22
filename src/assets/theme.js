@@ -730,7 +730,7 @@ window.Drawers = (function() {
     // transition for close animation
 
     /* by David Heisnam.
-    Changed to prepareTransition() to fix drawer search bug during closing transition.
+    Changed to prepareTransition().
     this.nodes.$moved.addClass('is-transitioning');
     */
     this.nodes.$moved.prepareTransition();
