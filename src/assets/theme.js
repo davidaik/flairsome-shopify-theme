@@ -2490,6 +2490,7 @@ theme.headerNav = (function() {
       var $submit = $form.find('.' + config.searchSubmitClass);
 
       $input.add($submit).on('focus blur', function() {
+        $input.prepareAutocompleteOffDuringTransition();
         $form.toggleClass('active-form');
       });
 
