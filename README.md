@@ -2,9 +2,9 @@
 
 This theme is based on the official free [Venture](https://themes.shopify.com/themes/venture/styles/snowboards) theme for Shopify.
 
-This version fixes a few bugs and has some additional features.
+This version includes a few bugfixes and has some additional features.
 
-The official theme was downloaded and ported to Slate 0.14.0, so now this theme is a Slate theme. You will need to install [Slate 0.14.0](https://shopify.github.io/slate/docs/0.14.0/) to build this theme.
+The official theme was downloaded and ported to Slate 0.14.0, so now this theme is a Slate theme. You will need to install [Slate 0.14.0](https://shopify.github.io/slate/docs/0.14.0/) to work with and build this theme.
 
 
 ### Bugs fixed:

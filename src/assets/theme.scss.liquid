@@ -164,7 +164,8 @@
 
 @mixin nav-text-style() {
   font-size: $font-size-nav;
-  font-weight: $font-weight-body-bold;
+  /*font-weight: $font-weight-body-bold;*/
+  font-weight: 400;
   @if $type-nav-spacing {
     letter-spacing: 0.6px;
   }
@@ -3676,7 +3677,8 @@ html {
 }
 
 .product-card__name {
-  font-weight: $font-weight-body-bold;
+  /*font-weight: $font-weight-body-bold;*/
+  font-weight: 400;
   color: $color-heading;
   white-space: normal;
 }
@@ -4401,6 +4403,7 @@ html {
   padding: 0 ($gutter-site / 2);
   background-color: $color-hero-title-bg;
   color: $color-hero-title-text;
+  cursor: default;
   @include prefix(box-decoration-break, clone, webkit o spec);
 
   &:last-child {
