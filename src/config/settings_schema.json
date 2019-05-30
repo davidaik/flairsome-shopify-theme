@@ -343,7 +343,7 @@
           "zh-CN": "字体",
           "zh-TW": "字型"
         },
-        "default": "unica_one_n4"
+        "default": "din_neuzeit_grotesk_n3"
       },
       {
         "type": "checkbox",
@@ -409,7 +409,7 @@
           "zh-CN": "字体",
           "zh-TW": "字型"
         },
-        "default": "karla_n4"
+        "default": "din_neuzeit_grotesk_n3"
       },
       {
         "type": "select",
