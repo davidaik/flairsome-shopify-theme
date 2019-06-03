@@ -377,7 +377,7 @@
           "zh-CN": "字母大写",
           "zh-TW": "將字母大寫"
         },
-        "default": true
+        "default": false
       },
       {
         "type": "header",
