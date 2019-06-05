@@ -22,8 +22,7 @@
       "signup_form_email_label": "E-mail",
       "signup_form_success": "Vi sender en e-mail til dig, lige inden vi åbner.",
       "admin_link_html": "Ejer du butikken? <a href=\"/admin\" class=\"text-link\">Log ind her</a>",
-      "password_link": "Brug adgangskode for at få adgang",
-      "powered_by_shopify_html": "Denne butik vil blive drevet af {{ shopify }}"
+      "password_link": "Brug adgangskode for at få adgang"
     },
     "social": {
       "share_title": "Del",
