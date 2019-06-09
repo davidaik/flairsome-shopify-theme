@@ -184,6 +184,23 @@
       },
       {
         "type": "color",
+        "id": "color_button_secondary_bg",
+        "label": {
+          "de": "Secondary buttons background",
+          "en": "Secondary buttons background",
+          "es": "Secondary buttons background",
+          "fr": "Secondary buttons background",
+          "it": "Secondary buttons background",
+          "ja": "Secondary buttons background",
+          "nl": "Secondary buttons background",
+          "pt-BR": "Secondary buttons background",
+          "zh-CN": "Secondary buttons background",
+          "zh-TW": "Secondary buttons background"
+        },
+        "default": "#8e44ad"
+      },
+      {
+        "type": "color",
         "id": "color_button_text",
         "label": {
           "de": "Schaltflächentext",

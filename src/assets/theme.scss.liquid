@@ -234,7 +234,7 @@ $color-btn-primary-hover: adaptive-color($color-btn-primary, 10%);
 $color-btn-primary-active: adaptive-color($color-btn-primary-hover, 10%);
 $color-btn-primary-text: {{ settings.color_button_text }};
 
-$color-btn-secondary: {{ settings.color_footer_bg }};
+$color-btn-secondary: {{ settings.color_button_secondary_bg }};
 $color-btn-secondary-hover: adaptive-color($color-btn-secondary, 5%);
 $color-btn-secondary-active: adaptive-color($color-btn-secondary-hover, 10%);
 $color-btn-secondary-text: color-control($color-btn-secondary);
@@ -5134,7 +5134,7 @@ html {
   }
 }
 
-.update-cart {
+.cart__buttons .btn--secondary.update-cart {
   display: none;
 
   .no-js & {
