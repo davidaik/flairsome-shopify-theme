@@ -214,7 +214,7 @@
           "zh-CN": "Secondary buttons background",
           "zh-TW": "Secondary buttons background"
         },
-        "default": "#8e44ad"
+        "default": "#e74c3c"
       },
       {
         "type": "color",
