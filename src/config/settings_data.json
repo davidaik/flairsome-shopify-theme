@@ -10,6 +10,8 @@
     "color_body_text": "#666",
     "color_button_bg": "#8e44ad",
     "color_button_text": "#fff",
+    "color_button_secondary_bg": "#e74c3c",
+    "color_button_secondary_text": "#fff",
     "color_content_bg": "#fff",
     "color_footer_bg": "#fff",
     "color_footer_text": "#000",

@@ -184,6 +184,23 @@
       },
       {
         "type": "color",
+        "id": "color_button_text",
+        "label": {
+          "de": "Schaltflächentext",
+          "en": "Button text",
+          "es": "Botón de texto",
+          "fr": "Texte du bouton",
+          "it": "Testo pulsante",
+          "ja": "ボタンテキスト",
+          "nl": "Knoptekst",
+          "pt-BR": "Texto do botão",
+          "zh-CN": "按钮文字",
+          "zh-TW": "按鈕文字"
+        },
+        "default": "#fff"
+      },
+      {
+        "type": "color",
         "id": "color_button_secondary_bg",
         "label": {
           "de": "Secondary buttons background",
@@ -201,18 +218,18 @@
       },
       {
         "type": "color",
-        "id": "color_button_text",
+        "id": "color_button_secondary_text",
         "label": {
-          "de": "Schaltflächentext",
-          "en": "Button text",
-          "es": "Botón de texto",
-          "fr": "Texte du bouton",
-          "it": "Testo pulsante",
-          "ja": "ボタンテキスト",
-          "nl": "Knoptekst",
-          "pt-BR": "Texto do botão",
-          "zh-CN": "按钮文字",
-          "zh-TW": "按鈕文字"
+          "de": "Secondary button text",
+          "en": "Secondary button text",
+          "es": "Secondary button text",
+          "fr": "Secondary button text",
+          "it": "Secondary button text",
+          "ja": "Secondary button text",
+          "nl": "Secondary button text",
+          "pt-BR": "Secondary button text",
+          "zh-CN": "Secondary button text",
+          "zh-TW": "Secondary button text"
         },
         "default": "#fff"
       },
