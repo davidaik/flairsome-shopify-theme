@@ -85,7 +85,7 @@
             <div class="hero-content__controls-item hero-content__controls-item--count" aria-label="{{ 'homepage.hero.slide_number' | t: slide_number: '[slide_number]' }}">
               <span class="slide-counter" aria-hidden="true">1/{{ section.blocks.size }}</span>
             </div>
-            {%- if section.settings.hero_home_auto -%}
+            {%- if section.settings.hero_home_auto and section.settings.hero_home_auto_pause_button-%}
               <div class="hero-content__controls-item hero-content__controls-item--pause">
                 <button type="button" class="hero__pause"
                                       aria-live="polite"
@@ -257,6 +257,23 @@
         "pt-BR": "Rodar os slides automaticamente",
         "zh-CN": "自动旋转幻灯片",
         "zh-TW": "自動旋轉投影片"
+      },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hero_home_auto_pause_button",
+      "label": {
+        "de": "Show pause button",
+        "en": "Show pause button",
+        "es": "Show pause button",
+        "fr": "Show pause button",
+        "it": "Show pause button",
+        "ja": "Show pause button",
+        "nl": "Show pause button",
+        "pt-BR": "Show pause button",
+        "zh-CN": "Show pause button",
+        "zh-TW": "Show pause button"
       },
       "default": false
     },
