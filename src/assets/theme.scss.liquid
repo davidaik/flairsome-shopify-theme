@@ -6521,9 +6521,12 @@ body {
   display: flex;
   flex-direction: row;
   @include prefix(flex-wrap, wrap, webkit spec);
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 18px;
 
+  @include media-query($small) {
+    align-items: center;
+  }
   h2 {
     flex-grow: 1;
     margin-bottom: 0;
