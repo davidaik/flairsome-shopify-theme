@@ -1,10 +1,20 @@
 <div class="page-width">
+  {% assign collection = collections[section.settings.collection] %}
+  {% assign rows = section.settings.rows %}
+  {% if collection != blank %}
+    <div class="flairsome-featured-collection-heading">
+        <h2><a href="{{ collection.url }}">{{ collection.title }}</a></h2>
+        <a href="{{ collection.url }}">{{ 'collections.general.view_all' | t }}</a>
+    </div>
+  {% else %}
+    <div class="flairsome-featured-collection-heading">
+        <h2><a href="{{ collection_object.url }}">{{ 'homepage.onboarding.collection_title' | t }}</a></h2>
+        <a href="{{ collection_object.url }}">{{ 'collections.general.view_all' | t }}</a>
+    </div>
+  {% endif %}
   <div class="section-block">
-    {% assign collection = collections[section.settings.collection] %}
-    {% assign rows = section.settings.rows %}
-
     {% if collection != blank %}
-      {% assign product_limit = rows | times: 5 | minus: 1 %}
+      {% assign product_limit = rows | times: 5 %}
 
       {% comment %}
         On mobile, show a max of 3 products to fill out the 2x2 grid.
@@ -25,19 +35,6 @@
       {% endcase %}
 
       <div class="grid grid--no-gutters grid--uniform collection">
-        <div class="grid__item small--one-half medium-up--one-fifth collection__cover">
-          {% if collection.image %}
-            {% assign collection_image = collection | img_url: '480x480' %}
-          {% else %}
-            {% assign collection_image = collection.products.first | img_url: '480x480' %}
-          {% endif %}
-          <a href="{{ collection.url }}" class="collection-card" style="background-image: url({{ collection_image }});">
-            <div class="collection-card__meta">
-              <p class="h1 collection-card__title">{{ collection.title }}</p>
-              <p class="collection-card__subtext">{{ 'collections.general.view_all' | t }}</p>
-            </div>
-          </a>
-        </div>
         {% for product in collection.products limit: product_limit %}
           <div class="grid__item small--one-half medium-up--one-fifth{% if forloop.index == 1 %} collection__card--first{% endif %} {% if mobile_product_limit and forloop.index > 3 %}small--hide{% elsif rows == 1 or rows == 3 %}{% if forloop.index == product_index_hide_on_mobile %}small--hide{% endif %}{% endif %}">
             {% include 'product-card', product: product, collection: collection %}
@@ -46,15 +43,7 @@
       </div>
     {% else %}
       <div class="grid grid--no-gutters grid--uniform collection">
-        <div class="grid__item small--one-half medium-up--one-fifth">
-          <a href="{{ collection_object.url }}" class="collection-card">
-            <div class="collection-card__meta">
-              <p class="h1 collection-card__title">{{ 'homepage.onboarding.collection_title' | t }}</p>
-              <p class="collection-card__subtext">{{ 'collections.general.view_all' | t }}</p>
-            </div>
-          </a>
-        </div>
-        {% assign product_limit = rows | times: 5 | minus: 1 %}
+        {% assign product_limit = rows | times: 5 %}
         {% assign mobile_product_limit = true %}
         {% for i in (1..product_limit) %}
           {% case i %}

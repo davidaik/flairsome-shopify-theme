@@ -12,7 +12,10 @@
 
 {% if collection and collection.products_count > 1 %}
 <div class="page-width">
-  <h2>{{ 'products.general.related_products' | t }}</h2>
+  <div class="flairsome-featured-collection-heading">
+    <h2><a href="{{ collection.url }}">{{ 'products.general.related_products' | t }}</a></h2>
+    <a href="{{ collection.url }}">{{ 'collections.general.view_all' | t }}</a>
+  </div>
   <div class="section-block">
     {% assign rows = 1 %}
     {% assign product_limit = 5 %}

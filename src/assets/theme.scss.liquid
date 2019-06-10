@@ -6514,3 +6514,27 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.flairsome-featured-collection-heading {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  @include prefix(flex-wrap, wrap, webkit spec);
+  align-items: center;
+  margin-bottom: 18px;
+
+  h2 {
+    flex-grow: 1;
+    margin-bottom: 0;
+    @if $type-accent-transform {
+      text-transform: uppercase;
+    }
+  }
+
+  & > a {
+    @if $type-nav-transform {
+      text-transform: uppercase;
+    }
+  }
+}
