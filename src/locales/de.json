@@ -274,7 +274,6 @@
       "on_sale_from_html": "Im Angebot ab {{ price }}",
       "from_text_html": "Ab {{ price }}",
       "include_taxes": "inkl. MwSt.",
-      "shipping_policy_html": "zzgl. <a href=\"{{ link }}\">Versandkosten</a>",
       "quantity": "Menge",
       "add_to_cart": "In den Einkaufswagen legen",
       "full_details": "Alle Einzelheiten",

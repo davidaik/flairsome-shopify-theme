@@ -274,7 +274,6 @@
       "on_sale_from_html": "Em Promoção desde {{ price }}",
       "from_text_html": "Desde {{ price }}",
       "include_taxes": "Taxas incluídas.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Portes de envio</a> calculados no pagamento.",
       "quantity": "Quantidade",
       "add_to_cart": "Adicionar ao Carrinho de Compras",
       "full_details": "Detalhes completos",

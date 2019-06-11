@@ -274,7 +274,6 @@
       "on_sale_from_html": "Em promoção, a partir de {{ price }}",
       "from_text_html": "A partir de {{ price }}",
       "include_taxes": "Imposto incluído.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Frete</a> calculado no checkout.",
       "quantity": "Quantidade",
       "add_to_cart": "Adicionar ao carrinho",
       "full_details": "Informações completas",

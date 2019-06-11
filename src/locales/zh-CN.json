@@ -274,7 +274,6 @@
       "on_sale_from_html": "促销价为 {{ price }} 起",
       "from_text_html": "来自 {{ price }}",
       "include_taxes": "税金（包含）。",
-      "shipping_policy_html": "结账时计算的<a href=\"{{ link }}\">运费</a>。",
       "quantity": "数量",
       "add_to_cart": "添加到购物车",
       "full_details": "全部详细信息",

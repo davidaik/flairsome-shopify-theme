@@ -274,7 +274,6 @@
       "on_sale_from_html": "Aanbieding voor {{ price }}",
       "from_text_html": "Vanaf {{ price }}",
       "include_taxes": "Inclusief belasting.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Verzendkosten</a> worden berekend bij het afrekenen.",
       "quantity": "Aantal",
       "add_to_cart": "Aan winkelwagen toevoegen",
       "full_details": "Alle details",

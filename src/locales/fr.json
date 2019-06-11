@@ -274,7 +274,6 @@
       "on_sale_from_html": "En solde {{ price }}",
       "from_text_html": "À partir de {{ price }}",
       "include_taxes": "Taxes incluses.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Frais de port</a> calculés à la caisse.",
       "quantity": "Quantité",
       "add_to_cart": "Ajouter au panier",
       "full_details": "Tous les détails",

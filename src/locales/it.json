@@ -274,7 +274,6 @@
       "on_sale_from_html": "Scontato da {{ price }}",
       "from_text_html": "Da {{ price }}",
       "include_taxes": "Tasse incluse.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Spese di spedizione</a> calcolate al momento del pagamento.",
       "quantity": "Quantità",
       "add_to_cart": "Aggiungi al carrello",
       "full_details": "Dettagli completi",

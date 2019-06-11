@@ -274,7 +274,6 @@
       "on_sale_from_html": "På tilbud fra {{ price }}",
       "from_text_html": "Fra {{ price }}",
       "include_taxes": "Inklusive moms.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Levering</a> bliver beregnet ved kassen.",
       "quantity": "Antal",
       "add_to_cart": "Læg i indkøbskurv",
       "full_details": "Udførlige detaljer",

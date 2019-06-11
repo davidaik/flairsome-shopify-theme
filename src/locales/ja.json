@@ -274,7 +274,6 @@
       "on_sale_from_html": "{{ price }}から販売中",
       "from_text_html": "{{ price }}から",
       "include_taxes": "税込み。",
-      "shipping_policy_html": "<a href=\"{{ link }}\">配送料</a>は購入手続き時に計算されます。",
       "quantity": "個数",
       "add_to_cart": "カートに追加する",
       "full_details": "詳細",

@@ -274,7 +274,6 @@
       "on_sale_from_html": "En oferta desde {{ price }}",
       "from_text_html": "De {{ price }}",
       "include_taxes": "Impuesto incluido.",
-      "shipping_policy_html": "Los <a href=\"{{ link }}\">gastos de envío</a> se calculan en la pantalla de pagos.",
       "quantity": "Cantidad",
       "add_to_cart": "Agregar al carrito",
       "full_details": "Todos los detalles",

@@ -274,7 +274,6 @@
       "on_sale_from_html": "促銷中，{{ price }} 起",
       "from_text_html": "從 {{ price }} 起",
       "include_taxes": "內含稅金。",
-      "shipping_policy_html": "結帳時計算<a href=\"{{ link }}\">運費</a>。",
       "quantity": "數量",
       "add_to_cart": "加入購物車",
       "full_details": "完整資訊",
