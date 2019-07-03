@@ -82,8 +82,5 @@
       {{ 'products.product.on_sale' | t }}
     </div>
   {% endif %}
-  <div class="product-card__overlay">
-    {% assign view_string_length = 'products.product.view' | t | size %}
-    <span class="btn product-card__overlay-btn {% if view_string_length > 8 %} btn--narrow{% endif %}">{{ 'products.product.view' | t }}</span>
-  </div>
+  <div class="product-card__overlay"></div>
 </a>

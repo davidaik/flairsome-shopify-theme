@@ -163,7 +163,7 @@
           "zh-CN": "此文本在页面和内容背景色的衬托下应清晰可见",
           "zh-TW": "此段文字在頁面和內容背景顏色套用後應清晰可見"
         },
-        "default": "#666"
+        "default": "#444"
       },
       {
         "type": "color",
@@ -214,7 +214,7 @@
           "zh-CN": "Secondary buttons background",
           "zh-TW": "Secondary buttons background"
         },
-        "default": "#e74c3c"
+        "default": "#16A085"
       },
       {
         "type": "color",
@@ -232,6 +232,23 @@
           "zh-TW": "Secondary button text"
         },
         "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": {
+          "de": "Accent color",
+          "en": "Accent color",
+          "es": "Accent color",
+          "fr": "Accent color",
+          "it": "Accent color",
+          "ja": "Accent color",
+          "nl": "Accent color",
+          "pt-BR": "Accent color",
+          "zh-CN": "Accent color",
+          "zh-TW": "Accent color"
+        },
+        "default": "#E91E63"
       },
       {
         "type": "header",

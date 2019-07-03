@@ -244,8 +244,8 @@ $color-btn-secondary-accent-hover: adaptive-color($color-btn-secondary-accent, 1
 $color-btn-secondary-accent-active: adaptive-color($color-btn-secondary-accent-hover, 10%);
 
 // Accent color (nav and links)
-$color-accent: {{ settings.color_button_bg }};
-$color-accent-hover: darken({{ settings.color_button_bg }}, 15%);
+$color-accent: {{ settings.color_accent }};
+$color-accent-hover: darken({{ settings.color_accent }}, 15%);
 $color-accent-text: {{ settings.color_button_text }};
 
 // General colors
@@ -3614,21 +3614,6 @@ html {
   }
 }
 
-.product-card__overlay-btn {
-  position: relative;
-  top: 50%;
-  @include transform(translateY(-45%));
-  transition: $product-card-transition;
-
-  .product-card:hover & {
-    @include transform(translateY(-85%));
-  }
-
-  .no-csstransforms & {
-    top: 35%;
-  }
-}
-
 /*================ Product image and wrapper ================*/
 .product-card__image-container {
   height: $product-card-height;
@@ -4079,7 +4064,7 @@ html {
   @include nav-text-style();
   display: inline-block;
   font-size: em(12);
-  background-color: $color-btn-primary;
+  background-color: $color-accent;
   color: $color-btn-primary-text;
   padding: ($gutter-site / 5) ($gutter-site / 2);
 }
