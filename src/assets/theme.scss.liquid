@@ -310,7 +310,8 @@ $width-qty-btn: 30px;
 // Featured collections
 $color-featured-collection-text: $color-heading;
 $color-featured-collection-bg: $color-content;
-$color-featured-collection-link: $color-accent;
+$color-featured-collection-link: $color-btn-primary;
+$color-featured-collection-link-hover: adaptive-color($color-btn-primary, 10%);
 
 // Collection card
 $color-collection-card-overlay: #000;
@@ -2162,13 +2163,13 @@ textarea {
 /*================ Default link styles ================*/
 a,
 .link-accent-color {
-  color: $color-accent;
+  color: $color-btn-primary;
   text-decoration: none;
   transition: $link-transition;
 
   &:hover,
   &:focus {
-    color: $color-accent-hover;
+    color: $color-btn-primary-hover;
   }
 }
 
@@ -2848,7 +2849,7 @@ $slick-opacity-not-active: 0.25;
 
   &:hover,
   &:focus {
-    color: $color-accent;
+    color: $color-btn-primary;
   }
 }
 
@@ -2899,7 +2900,7 @@ $slick-opacity-not-active: 0.25;
 
   &:not(.active-form):hover {
     .site-header__link {
-      color: $color-accent;
+      color: $color-btn-primary;
     }
   }
 }
@@ -3080,7 +3081,7 @@ input[type='search']::-webkit-search-cancel-button {
     left: $gutter-site;
     right: $gutter-site;
     height: 3px;
-    background-color: $color-accent;
+    background-color: $color-btn-primary;
   }
 }
 
@@ -3215,7 +3216,7 @@ input[type='search']::-webkit-search-cancel-button {
 
   &:hover,
   &:focus {
-    color: $color-accent;
+    color: $color-btn-primary;
   }
 }
 
@@ -3732,6 +3733,10 @@ html {
   font-size: em(20);
 }
 
+.product-single__price-sale {
+  color: $color-accent;
+}
+
 .product-single__price--compare {
   color: lighten($color-body-text, 5%);
 }
@@ -3985,7 +3990,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    border: 3px solid $color-accent;
+    border: 3px solid $color-btn-primary;
   }
 }
 
@@ -4996,7 +5001,7 @@ html {
   &:hover,
   &:focus {
     opacity: 1;
-    color: $color-accent;
+    color: $color-btn-primary;
   }
 
   & + & {
@@ -5505,7 +5510,7 @@ body.modal--is-active {
   color: $color-featured-collection-link;
 
   .featured-card:hover & {
-    color: inherit;
+    color: $color-featured-collection-link-hover;
   }
 }
 
@@ -6525,11 +6530,18 @@ body {
     @if $type-accent-transform {
       text-transform: uppercase;
     }
+    a:hover {
+      color: adaptive-color($color-btn-primary, 10%);
+    }
   }
 
   & > a {
+    color: $color-btn-primary;
     @if $type-nav-transform {
       text-transform: uppercase;
+    }
+    &:hover {
+      color: adaptive-color($color-btn-primary, 10%);
     }
   }
 }

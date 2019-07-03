@@ -98,9 +98,15 @@
               {% unless product.compare_at_price_max > product.price %}
                 <span class="visually-hidden">{{ 'products.product.regular_price' | t }}</span>
               {% endunless %}
-              <span id="ProductPrice-{{ section.id }}" class="product-single__price" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
-                {{ current_variant.price | money }}
-              </span>
+              {% if product.compare_at_price_max > product.price %}
+                <span id="ProductPrice-{{ section.id }}" class="product-single__price product-single__price-sale" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+                  {{ current_variant.price | money }}
+                </span>
+              {% else %}
+                <span id="ProductPrice-{{ section.id }}" class="product-single__price" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+                  {{ current_variant.price | money }}
+                </span>
+              {% endif %}
             </li>
             {% if product.compare_at_price_max > product.price %}
               <li>

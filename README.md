@@ -17,6 +17,9 @@ The official theme was downloaded and ported to Slate 0.14.0, so now this theme 
 1. Added "Related Products" section on product pages. Shows 5 items.
 2. Added "User Reviews" section. Requires the official Shopify reviews app.
 
+### Removed:
+
+1. Obnoxious "VIEW" button that appears over product card on mouse hover.
 
 ## License
 Shopify License?
