@@ -29,6 +29,7 @@
     "type_nav_size": "14px",
     "type_nav_spacing": true,
     "type_nav_transform": true,
+    "free_shipping": true,
     "sections": {
       "slideshow": {
         "type": "slideshow",

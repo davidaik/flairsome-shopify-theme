@@ -1280,5 +1280,49 @@
         }
       }
     ]
+  },
+  {
+    "name": {
+      "de": "Tax and shipping",
+      "en": "Tax and shipping",
+      "es": "Tax and shipping",
+      "fr": "Tax and shipping",
+      "it": "Tax and shipping",
+      "ja": "Tax and shipping",
+      "nl": "Tax and shipping",
+      "pt-BR": "Tax and shipping",
+      "zh-CN": "Tax and shipping",
+      "zh-TW": "Tax and shipping"
+    },
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "free_shipping",
+        "label": {
+          "de": "Free shipping",
+          "en": "Free shipping",
+          "es": "Free shipping",
+          "fr": "Free shipping",
+          "it": "Free shipping",
+          "ja": "Free shipping",
+          "nl": "Free shipping",
+          "pt-BR": "Free shipping",
+          "zh-CN": "Free shipping",
+          "zh-TW": "Free shipping"
+        },
+        "info": {
+          "de": "This affects shipping information displayed on the Product and Cart pages.",
+          "en": "This affects shipping information displayed on the Product and Cart pages.",
+          "es": "This affects shipping information displayed on the Product and Cart pages.",
+          "fr": "This affects shipping information displayed on the Product and Cart pages.",
+          "it": "This affects shipping information displayed on the Product and Cart pages.",
+          "ja": "This affects shipping information displayed on the Product and Cart pages.",
+          "nl": "This affects shipping information displayed on the Product and Cart pages.",
+          "pt-BR": "This affects shipping information displayed on the Product and Cart pages.",
+          "zh-CN": "This affects shipping information displayed on the Product and Cart pages.",
+          "zh-TW": "This affects shipping information displayed on the Product and Cart pages."
+        }
+      }
+    ]
   }
 ]
