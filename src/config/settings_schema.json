@@ -394,7 +394,7 @@
           "zh-CN": "字体",
           "zh-TW": "字型"
         },
-        "default": "din_neuzeit_grotesk_n3"
+        "default": "futura_n4"
       },
       {
         "type": "checkbox",
@@ -460,7 +460,7 @@
           "zh-CN": "字体",
           "zh-TW": "字型"
         },
-        "default": "din_neuzeit_grotesk_n3"
+        "default": "futura_n4"
       },
       {
         "type": "select",
