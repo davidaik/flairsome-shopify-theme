@@ -11,7 +11,7 @@
 {% endif %}
 
 {% if collection and collection.products_count > 1 %}
-<div class="page-width">
+<div class="page-width flairsome-related-products">
   <div class="flairsome-featured-collection-heading">
     <h2><a href="{{ collection.url }}">{{ 'products.general.related_products' | t }}</a></h2>
     <a href="{{ collection.url }}">{{ 'collections.general.view_all' | t }}</a>
@@ -40,11 +40,12 @@
 
       <div class="grid grid--no-gutters grid--uniform collection">
         {% for product in collection.products limit: product_limit %}
-          <div class="grid__item small--one-half medium-up--one-fifth{% if forloop.index == 1 %} collection__card--first{% endif %} {% if mobile_product_limit and forloop.index > 3 %}small--hide{% elsif rows == 1 or rows == 3 %}{% if forloop.index == product_index_hide_on_mobile %}small--hide{% endif %}{% endif %}">
+          <div class="grid__item small--one-half medium-up--one-fifth{% if forloop.index == 1 %} collection__card--first{% endif %}{% if mobile_product_limit and forloop.index > 3 %}small--hide{% elsif rows == 1 or rows == 3 %}{% if forloop.index == product_index_hide_on_mobile %}small--hide{% endif %}{% endif %}">
             {% include 'product-card', product: product, collection: collection %}
           </div>
         {% endfor %}
       </div>
   </div>
+  <a href="{{ collection.url }}" class="flairsome-featured-collection-view-all-bottom">{{ 'collections.general.view_all' | t }}</a>
 </div>
 {% endif %}

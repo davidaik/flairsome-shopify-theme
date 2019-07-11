@@ -6540,8 +6540,33 @@ body {
     @if $type-nav-transform {
       text-transform: uppercase;
     }
+    @include media-query($small) {
+      display: none;
+    }
     &:hover {
       color: adaptive-color($color-btn-primary, 10%);
     }
+  }
+}
+
+.flairsome-related-products {
+  @include media-query($small) {
+    .grid > div:nth-last-child(2) .product-card, .grid >div:last-of-type .product-card {
+      border-bottom: none;
+    }
+  }
+}
+
+.flairsome-featured-collection-view-all-bottom {
+  display: none;
+  margin: 18px auto;
+  padding: 16px 16px;
+  color: $color-btn-primary;
+  text-align: center;
+  @if $type-nav-transform {
+    text-transform: uppercase;
+  }
+  @include media-query($small) {
+    display: block;
   }
 }
