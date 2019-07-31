@@ -17,25 +17,27 @@
     <div class="grid__item {% if product.images.size > 1 %}medium-up--three-fifths{% else %}medium-up--one-half{% endif %}">
       <div class="photos">
         <div class="photos__item photos__item--main">
-          {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+          {%- assign featured_image = product.featured_image -%}
           {%- for image in product.images -%}
-            <div class="product-single__photo product__photo-container product__photo-container-{{ section.id }} js{% unless image == featured_image %} hide{% endunless %}"
-                 id="ProductPhoto"
-                 style="max-width: {% include 'image-width' with image: image, width: 480 %}px;"
-                 data-image-id="{{ image.id }}">
-              <a href="{{ image | img_url: '1024x1024' }}"
-                 class="js-modal-open-product-modal product__photo-wrapper product__photo-wrapper-{{ section.id }}"
-                 style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
-                {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
-                <img class="lazyload{% unless image == featured_image %} lazypreload{% endunless %}"
-                  src="{{ image | img_url: '150x150' }}"
-                  data-src="{{ img_url }}"
-                  data-widths="[180, 240, 360, 480, 720, 960, 1080, 1296, 1512, 1728, 2048]"
-                  data-aspectratio="{{ image.aspect_ratio }}"
-                  data-sizes="auto"
-                  alt="{{ image.alt | escape }}">
-              </a>
-            </div>
+            {% if image != featured_image or section.settings.hide_featured_image != true %}
+              <div class="product-single__photo product__photo-container product__photo-container-{{ section.id }} js{% unless image == current_variant.featured_image %} hide{% endunless %}"
+                  id="ProductPhoto"
+                  style="max-width: {% include 'image-width' with image: image, width: 480 %}px;"
+                  data-image-id="{{ image.id }}">
+                <a href="{{ image | img_url: '1024x1024' }}"
+                  class="js-modal-open-product-modal product__photo-wrapper product__photo-wrapper-{{ section.id }}"
+                  style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+                  {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                  <img class="lazyload{% unless image == featured_image %} lazypreload{% endunless %}"
+                    src="{{ image | img_url: '150x150' }}"
+                    data-src="{{ img_url }}"
+                    data-widths="[180, 240, 360, 480, 720, 960, 1080, 1296, 1512, 1728, 2048]"
+                    data-aspectratio="{{ image.aspect_ratio }}"
+                    data-sizes="auto"
+                    alt="{{ image.alt | escape }}">
+                </a>
+              </div>
+            {% endif %}
           {%- endfor -%}
           <noscript>
             <a href="{{ featured_image | img_url: '1024x1024' }}">
@@ -46,13 +48,15 @@
         {% if product.images.size > 1 %}
           <div class="photos__item photos__item--thumbs">
             <div class="product-single__thumbnails product-single__thumbnails-{{ section.id }}{% unless product.images.size > 2 %} product-single__thumbnails--static{% endunless %}">
-              {% for image in product.images %}
-                <div class="product-single__thumbnail-item product-single__thumbnail-item-{{ section.id }}{% if image == featured_image %} is-active{% endif %}" data-image-id="{{ image.id }}">
-                  <a href="{{ image.src | img_url: product_image_size }}" data-zoom="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail product-single__thumbnail-{{ section.id }}">
-                    <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
-                  </a>
-                </div>
-              {% endfor %}
+              {%- for image in product.images -%}
+                {% if image != featured_image or section.settings.hide_featured_image != true %}
+                  <div class="product-single__thumbnail-item product-single__thumbnail-item-{{ section.id }}{% if image == current_variant.featured_image %} is-active{% endif %}" data-image-id="{{ image.id }}">
+                    <a href="{{ image.src | img_url: product_image_size }}" data-zoom="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail product-single__thumbnail-{{ section.id }}">
+                      <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
+                    </a>
+                  </div>
+                {% endif %}
+              {%- endfor -%}
             </div>
           </div>
         {% endif %}
@@ -362,6 +366,35 @@
         "zh-TW": "啟用產品分享"
       },
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_featured_image",
+      "label": {
+        "de": "Hide featured image",
+        "en": "Hide featured image",
+        "es": "Hide featured image",
+        "fr": "Hide featured image",
+        "it": "Hide featured image",
+        "ja": "Hide featured image",
+        "nl": "Hide featured image",
+        "pt-BR": "Hide featured image",
+        "zh-CN": "Hide featured image",
+        "zh-TW": "Hide featured image"
+      },
+      "info": {
+        "de": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option.",
+        "en": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option.",
+        "es": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option.",
+        "fr": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option.",
+        "it": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option.",
+        "ja": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option.",
+        "nl": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option.",
+        "pt-BR": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option.",
+        "zh-CN": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option.",
+        "zh-TW": "Hide the featured image from the product image gallery. This is useful when the featured image has a different aspect ratio as compared to the other images, in which case the container size keeps changing when you switch between images. This does not happen if the featured image is hidden. IMPORTANT: Make sure the featured image is not attached to any product variant before enabling this option."
+      },
+      "default": false
     },
     {
       "type": "checkbox",
