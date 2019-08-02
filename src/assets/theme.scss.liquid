@@ -3572,12 +3572,8 @@ html {
   color: $color-body-text;
   z-index: $z-index-product-card;
 
-  .grid--no-gutters & {
-    border-left-width: 1px;
-  }
-
-  .collection__card--first & {
-    border-left-width: 0;
+  .grid__item & {
+    border: none;
   }
 
   // Overlay appears on hover/focus, don't change text color
@@ -6547,14 +6543,6 @@ body {
     }
     &:hover {
       color: adaptive-color($color-btn-primary, 10%);
-    }
-  }
-}
-
-.flairsome-related-products {
-  @include media-query($small) {
-    .grid > div:nth-last-child(2) .product-card, .grid >div:last-of-type .product-card {
-      border-bottom: none;
     }
   }
 }
