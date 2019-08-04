@@ -19,8 +19,24 @@
         <div class="photos__item photos__item--main">
           {%- assign featured_image = product.featured_image -%}
           {%- for image in product.images -%}
-            {% if image != featured_image or image == current_variant.featured_image or section.settings.hide_featured_image != true %}
-              <div class="product-single__photo product__photo-container product__photo-container-{{ section.id }} js{% unless image == current_variant.featured_image %} hide{% endunless %}"
+            {% if section.settings.hide_featured_image != true or image != featured_image or image.attached_to_variant? %}
+              {% assign hide_class = '' %}
+              {% if image == featured_image %}
+                {% comment %}
+                  If this image is the featured_image, it means that third condition has passed in the 'or' group of conditions of the parent 'if'.
+                  This means that means the image is the featured image and it is also attached to a product. So definitely don't hide it.
+                {% endcomment %}
+                {% assign hide_class = '' %}
+              {% elsif section.settings.hide_featured_image %}
+                {% if image == current_variant.featured_image and featured_image != current_variant.featured_image and featured_image.attached_to_variant? != true %}
+                  {% assign hide_class = '' %}
+                {% else %}
+                  {% assign hide_class = ' hide' %}
+                {% endif %}
+              {% else %}
+                {% assign hide_class = ' hide' %}
+              {% endif %}
+              <div class="product-single__photo product__photo-container product__photo-container-{{ section.id }} js{{ hide_class }}"
                   id="ProductPhoto"
                   style="max-width: {% include 'image-width' with image: image, width: 480 %}px;"
                   data-image-id="{{ image.id }}">
@@ -49,8 +65,24 @@
           <div class="photos__item photos__item--thumbs">
             <div class="product-single__thumbnails product-single__thumbnails-{{ section.id }}{% unless product.images.size > 2 %} product-single__thumbnails--static{% endunless %}">
               {%- for image in product.images -%}
-                {% if image != featured_image or image == current_variant.featured_image or section.settings.hide_featured_image != true %}
-                  <div class="product-single__thumbnail-item product-single__thumbnail-item-{{ section.id }}{% if image == current_variant.featured_image %} is-active{% endif %}" data-image-id="{{ image.id }}">
+                {% if section.settings.hide_featured_image != true or image != featured_image or image.attached_to_variant? %}
+                  {% assign active_class = '' %}
+                  {% if image == featured_image %}
+                    {% comment %}
+                      If this image is the featured_image, it means that third condition has passed in the 'or' group of conditions of the parent 'if'.
+                      This means that means the image is the featured image and it is also attached to a product. So definitely set it to active.
+                    {% endcomment %}
+                    {% assign active_class = ' is-active' %}
+                  {% elsif section.settings.hide_featured_image %}
+                    {% if image == current_variant.featured_image and featured_image != current_variant.featured_image and featured_image.attached_to_variant? != true %}
+                      {% assign active_class = ' is-active' %}
+                    {% else %}
+                      {% assign active_class = '' %}
+                    {% endif %}
+                  {% else %}
+                    {% assign active_class = '' %}
+                  {% endif %}
+                  <div class="product-single__thumbnail-item product-single__thumbnail-item-{{ section.id }}{{ active_class }}" data-image-id="{{ image.id }}">
                     <a href="{{ image.src | img_url: product_image_size }}" data-zoom="{{ image.src | img_url: '1024x1024' }}" class="product-single__thumbnail product-single__thumbnail-{{ section.id }}">
                       <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
                     </a>
