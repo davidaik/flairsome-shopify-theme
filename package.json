@@ -1,6 +1,6 @@
 {
-  "name": "flairsome",
-  "version": "0.0.1",
+  "name": "flairsome-venture",
+  "version": "1.0.0",
   "devDependencies": {
     "@shopify/slate-tools": "0.14.0"
   }

@@ -3750,6 +3750,28 @@ theme.CollectionsList = (function() {
   return CollectionsList;
 })();
 
+theme.ProductRecommendations = (function() {
+  function ProductRecommendations(container) {
+    this.$container = $(container);
+
+    var self = this;
+    var productId = this.$container.data('productId');
+    var productLimit = this.$container.data('productLimit');
+    var recommendationsSectionUrl =
+      '/recommendations/products?&section_id=product-recommendations&product_id=' +
+      productId +
+      '&limit=' + productLimit;
+
+    $.get(recommendationsSectionUrl).then(function(section) {
+      var recommendationsMarkup = $(section).html();
+      if (recommendationsMarkup.trim() !== '') {
+        self.$container.html(recommendationsMarkup);
+      }
+    });
+  }
+
+  return ProductRecommendations;
+})();
 
 theme.init = function() {
   theme.customerTemplates.init();
@@ -3779,6 +3801,7 @@ theme.init = function() {
   sections.register('quotes', theme.Quotes);
   sections.register('video', theme.Video);
   sections.register('collections-list', theme.CollectionsList);
+  sections.register('product-recommendations', theme.ProductRecommendations);
 
   // Standalone modules
   $(window).on('load', theme.articleImages);
