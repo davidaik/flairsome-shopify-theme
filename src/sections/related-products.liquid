@@ -1,0 +1,104 @@
+{% if section.settings.related_products_enable %}
+  {% assign number_of_products = 5 %}
+  {% assign number_of_products_to_fetch = number_of_products | plus: 1 %}
+  {% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+    {% assign found_a_collection = false %}
+    {% for c in product.collections %}
+      {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' and c.all_products_count > 1 %}
+        {% assign found_a_collection = true %}
+        {% assign collection = c %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if collection and collection.products_count > 1 %}
+  <div class="page-width flairsome-related-products{% if section.settings.show_margin_top %} section-spacing-top {% endif %}">
+    <div class="flairsome-featured-collection-heading">
+      <h2><a href="{{ collection.url }}">{{ 'products.general.related_products' | t }}</a></h2>
+      <a href="{{ collection.url }}">{{ 'collections.general.view_all' | t }}</a>
+    </div>
+    <div class="section-block">
+      {% assign rows = 1 %}
+      {% assign product_limit = 5 %}
+
+        {% comment %}
+          On mobile, show a max of 3 products to fill out the 2x2 grid.
+          Turn mobile_product_limit to false to remove that limitation.
+        {% endcomment %}
+        {% assign mobile_product_limit = true %}
+        {% comment %}
+          On mobile the 5 column grid leaves a straggler when 1 or 3 rows.
+          Hide the straggler according to its index. It's one lower than
+          the number of columns because the fist column is a collection card.
+          This is only necessary when mobile_product_limit is false.
+        {% endcomment %}
+        {% case rows %}
+          {% when 1 %}
+            {% assign product_index_hide_on_mobile = 5 %}
+          {% when 3 %}
+            {% assign product_index_hide_on_mobile = 15 %}
+        {% endcase %}
+
+        <div class="grid grid--no-gutters grid--uniform collection">
+          {% for product in collection.products limit: product_limit %}
+            <div class="grid__item small--one-half medium-up--one-fifth{% if forloop.index == 1 %} collection__card--first{% endif %} {% if mobile_product_limit and forloop.index > 4 %}small--hide{% elsif rows == 1 or rows == 3 %}{% if forloop.index == product_index_hide_on_mobile %}small--hide{% endif %}{% endif %}">
+              {% include 'product-card', product: product, collection: collection %}
+            </div>
+          {% endfor %}
+        </div>
+    </div>
+    <a href="{{ collection.url }}" class="flairsome-featured-collection-view-all-bottom">{{ 'collections.general.view_all' | t }}</a>
+  </div>
+  {% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": {
+    "de": "Related products",
+    "en": "Related products",
+    "es": "Related products",
+    "fr": "Related products",
+    "it": "Related products",
+    "ja": "Related products",
+    "nl": "Related products",
+    "pt-BR": "Related products",
+    "zh-CN": "Related products",
+    "zh-TW": "Related products"
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "related_products_enable",
+      "label": {
+        "de": "Ähnliche Produkte anzeigen",
+        "en": "Show related products",
+        "es": "Mostrar productos relacionados",
+        "fr": "Afficher les produits associés",
+        "it": "Mostra prodotti correlati",
+        "ja": "関連商品を表示する",
+        "nl": "Toon verwante producten",
+        "pt-BR": "Exibir produtos relacionados",
+        "zh-CN": "显示相关产品",
+        "zh-TW": "顯示相關產品"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_margin_top",
+      "label": {
+        "de": "Show top margin",
+        "en": "Show top margin",
+        "es": "Show top margin",
+        "fr": "Show top margin",
+        "it": "Show top margin",
+        "ja": "Show top margin",
+        "nl": "Show top margin",
+        "pt-BR": "Show top margin",
+        "zh-CN": "Show top margin",
+        "zh-TW": "Show top margin"
+      }
+    }
+  ]
+}
+{% endschema %}
